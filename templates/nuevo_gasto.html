@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo gasto</title>
+</head>
+<body>
+    <h1>Cargar gasto</h1>
+    <form method="POST">
+        <p>
+            <label>Descripción:</label><br>
+            <input type="text" name="descripcion" required>
+        </p>
+        <p>
+            <label>Monto:</label><br>
+            <input type="number" name="monto" step="0.01" min="0.01" required>
+        </p>
+        <p>
+            <label>Fecha:</label><br>
+            <input type="date" name="fecha" required>
+        </p>
+        <p>
+            <label>Categoría:</label><br>
+            <select name="categoria" required>
+                {% for c in categorias %}
+                <option value="{{ c.ID_Categoria }}">{{ c.NombreCategoria }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <button type="submit">Guardar</button>
+    </form>
+    <p><a href="/gastos">Ver gastos</a></p>
+</body>
+</html>

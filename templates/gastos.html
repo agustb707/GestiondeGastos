@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gastos</title>
+</head>
+<body>
+    <h1>Gastos</h1>
+    <table border="1">
+        <tr>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th>Categoría</th>
+            <th>Monto</th>
+        </tr>
+        {% for g in gastos %}
+        <tr>
+            <td>{{ g.FechaGasto }}</td>
+            <td>{{ g.Descripcion }}</td>
+            <td>{{ g.NombreCategoria }}</td>
+            <td>{{ g.Monto }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/gastos/nuevo">Cargar otro gasto</a></p>
+</body>
+</html>
